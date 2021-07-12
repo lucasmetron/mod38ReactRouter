@@ -24,13 +24,19 @@ function App() {
           <Route exact path='/aulas'> {/* passado o exact para acessar a rota exata*/}
             <Aula></Aula>
           </Route>
+
           <Route exact path='/sobre'> {/* passado o exact para acessar a rota exata*/}
             <Sobre></Sobre>
           </Route>
+
           <Route exact path='/aulas/a'>
             <div>
               Coutedo
             </div>
+          </Route>
+
+          <Route path='*'>
+            <div>Pagina nao encotrada</div>
           </Route>
 
         </Switch>

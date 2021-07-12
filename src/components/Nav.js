@@ -6,8 +6,10 @@ function Nav() {
         <div className="navBar">
             <p>ProgBr</p>
             <div className="divRoute">
-                <p>Aulas</p>
-                <p>Sobre</p>
+                <a href="./">Home</a>
+                <a href="./aulas">Aulas</a>
+                <a href="./sobre">Sobre</a>
+                <a href="./asdasd">Inexistente</a>
             </div>
         </div>
     );
