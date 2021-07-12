@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useRouteMatch } from 'react-router-dom';
 import { data } from '../Data';
 
 function Aulas() {
     const match = useRouteMatch();
+    const [url, setUrl] = useState('')
 
     useEffect(() => {
-        console.log(match)
-    })
+        const newUrl = match.url.slice(-1) === '/' ? match.url : match.url + '/';
+        setUrl(newUrl);
+    }, [match])
 
 
     return (
@@ -16,7 +18,7 @@ function Aulas() {
             <h1>Aulas</h1>
             <ul className='aulas'>
                 {data.map(aula =>
-                    <li key={aula.id}><Link className='link' to={`${match.url}/${aula.id}`} >{aula.title}</Link></li>)}
+                    <li key={aula.id}><Link className='link' to={`${url}${aula.id}`} >{aula.title}</Link></li>)}
             </ul>
         </div>
 
