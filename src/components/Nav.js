@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav() {
 
@@ -6,10 +7,10 @@ function Nav() {
         <div className="navBar">
             <p>ProgBr</p>
             <div className="divRoute">
-                <a href="./">Home</a>
-                <a href="./aulas">Aulas</a>
-                <a href="./sobre">Sobre</a>
-                <a href="./asdasd">Inexistente</a>
+                <p><Link to='/'>Home</Link></p>
+                <p><Link to='/aulas'>Aulas</Link></p>
+                <p><Link to='/sobre'>Sobre</Link></p>
+                <p><Link to='/asdasdsa'>Indefinido</Link></p>
             </div>
         </div>
     );
