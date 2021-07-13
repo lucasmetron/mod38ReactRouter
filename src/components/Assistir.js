@@ -8,7 +8,6 @@ export default function Assistir(props) {
 
     useEffect(() => {
         console.log(query)
-        console.log(match)
 
     })
 

@@ -5,50 +5,56 @@ import Aulas from './components/Aulas';
 import Aula from './components/Aula';
 import Sobre from './components/Sobre';
 import Assistir from './components/Assistir';
-
-
+import loginReducer from './reducers/loginReducer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-//BrowserRouter é responsavel por gerenciar as rotas (as é para apelidar o BrouserRouter)
-//Route é onde iremos setar a rota
-//Switch vai acessar a primeira rota que der match e nao vai tentar outras
+
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
+
+const store = createStore(loginReducer)
 
 function App() {
   return (
 
-    <BrowserRouter>
-      <div className="app" >
-        <Nav></Nav>
+    <Provider store={store}>
 
-        <Switch> {/*Componente para fazer o switch das rotas*/}
+      <BrowserRouter>
+        <div className="app" >
+          <Nav></Nav>
 
-          <Route exact path='/'> {/* passado o exact para acessar a rota exata*/}
-            <Home></Home>
-          </Route>
+          <Switch>
 
-          <Route path='/aulas/:id'>
-            <Aula></Aula>
-          </Route>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
 
-          <Route exact path='/aulas'> {/* passado o exact para acessar a rota exata*/}
-            <Aulas></Aulas>
-          </Route>
+            <Route path='/aulas/:id'>
+              <Aula></Aula>
+            </Route>
 
-          <Route exact path='/sobre'> {/* passado o exact para acessar a rota exata*/}
-            <Sobre></Sobre>
-          </Route>
+            <Route exact path='/aulas'>
+              <Aulas></Aulas>
+            </Route>
 
-          <Route exact path='/assistir'>
-            <Assistir></Assistir>
-          </Route>
+            <Route exact path='/sobre'>
+              <Sobre></Sobre>
+            </Route>
 
-          <Route path='*'>
-            <div className='center'>Pagina nao encotrada</div>
-          </Route>
+            <Route exact path='/assistir'>
+              <Assistir></Assistir>
+            </Route>
 
-        </Switch>
-      </div>
+            <Route path='*'>
+              <div className='center'>Pagina nao encotrada</div>
+            </Route>
 
-    </BrowserRouter>
+          </Switch>
+        </div>
+
+      </BrowserRouter>
+
+    </Provider>
 
   );
 }
