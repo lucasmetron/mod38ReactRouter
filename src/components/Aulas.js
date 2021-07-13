@@ -9,7 +9,6 @@ function Aulas() {
     useEffect(() => {
         const newUrl = match.url.slice(-1) === '/' ? match.url : match.url + '/';
         setUrl(newUrl);
-        console.log(match)
     }, [match])
 
 
