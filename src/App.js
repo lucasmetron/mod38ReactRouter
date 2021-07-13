@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Aulas from './components/Aulas';
 import Aula from './components/Aula';
 import Sobre from './components/Sobre';
+import Assistir from './components/Assistir';
 
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -36,8 +37,12 @@ function App() {
             <Sobre></Sobre>
           </Route>
 
+          <Route exact path='/assistir'>
+            <Assistir></Assistir>
+          </Route>
+
           <Route path='*'>
-            <div>Pagina nao encotrada</div>
+            <div className='center'>Pagina nao encotrada</div>
           </Route>
 
         </Switch>
