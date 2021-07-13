@@ -6,7 +6,7 @@ import Aula from './components/Aula';
 import Sobre from './components/Sobre';
 
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 //BrowserRouter é responsavel por gerenciar as rotas (as é para apelidar o BrouserRouter)
 //Route é onde iremos setar a rota
 //Switch vai acessar a primeira rota que der match e nao vai tentar outras
@@ -14,7 +14,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 function App() {
   return (
 
-    <Router>
+    <BrowserRouter>
       <div className="app" >
         <Nav></Nav>
 
@@ -43,7 +43,7 @@ function App() {
         </Switch>
       </div>
 
-    </Router>
+    </BrowserRouter>
 
   );
 }
