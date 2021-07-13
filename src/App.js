@@ -6,6 +6,7 @@ import Aula from './components/Aula';
 import Sobre from './components/Sobre';
 import Assistir from './components/Assistir';
 import loginReducer from './reducers/loginReducer';
+import PrivateRoute from './components/PrivateRouter';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { Provider } from 'react-redux'
@@ -33,9 +34,9 @@ function App() {
               <Aula></Aula>
             </Route>
 
-            <Route exact path='/aulas'>
+            <PrivateRoute path='/aulas'>
               <Aulas></Aulas>
-            </Route>
+            </PrivateRoute>
 
             <Route exact path='/sobre'>
               <Sobre></Sobre>
