@@ -1,28 +1,21 @@
-import React, { useEffect } from 'react';
-import { useLocation, useParams, useRouteMatch } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { data } from '../Data';
+
+
+function useAula() {
+    const id = useParams().id;
+    return data.filter(aula => aula.id == id)[0];
+}
 
 function Aula() {
 
-    const match = useRouteMatch();
-    const id = parseInt(match.params.id); //pegando o id pela hooks useRouteMAtch()
-
-    const location = useLocation(); //também é possivel pegar a url por este hooks
-
-    const params = useParams() //Mais utilizado pq ele ja traz o parametro direto
-
-
-    useEffect(() => {
-        console.log(match);
-        console.log(location);
-        console.log(params)
-    })
-
+    const aula = useAula();
 
     return (
         <div className='center'>
-            <h1>{data[params.id].title}</h1>
-            <h3>{data[params.id].desc}</h3>
+            <h1>{aula.title}</h1>
+            <h3>{aula.desc}</h3>
         </div>
 
     );
