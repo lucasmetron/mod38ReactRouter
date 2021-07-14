@@ -12,7 +12,7 @@ export default function PrivateRoute({ children, ...rest }) {
             render={({ location }) =>
                 login ? (children) :
                     (<Redirect to={{
-                        pathname: '/',
+                        pathname: '/negado',
                         state: { from: location }
                     }}></Redirect>)
             }

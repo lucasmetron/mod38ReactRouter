@@ -7,10 +7,12 @@ import Sobre from './components/Sobre';
 import Assistir from './components/Assistir';
 import loginReducer from './reducers/loginReducer';
 import PrivateRoute from './components/PrivateRouter';
+import Negado from './components/Negado';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+
 
 
 const store = createStore(loginReducer)
@@ -37,6 +39,11 @@ function App() {
             <PrivateRoute path='/aulas'>
               <Aulas></Aulas>
             </PrivateRoute>
+
+
+            <Route exact path='/negado'>
+              <Negado></Negado>
+            </Route>
 
             <Route exact path='/sobre'>
               <Sobre></Sobre>
